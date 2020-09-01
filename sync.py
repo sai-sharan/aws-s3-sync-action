@@ -59,8 +59,8 @@ cmd = ' '.join(args)
 print("Running the AWS Sync command with the following arguments...")
 print(cmd)
 
-# try:
-#     os.system(cmd)
-# except:
-#     print("Oops!!!")
-#     sys.exit(1)
+try:
+    os.system(cmd)
+except:
+    print("Error executing the sync command !!!")
+    sys.exit(1)
