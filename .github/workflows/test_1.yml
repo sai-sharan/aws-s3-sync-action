@@ -1,0 +1,22 @@
+name: Test 1 - aws s3 sync action
+
+on:
+    push:
+        branches: [ master ]
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+            - uses: sai-sharan/aws-s3-sync-action@master
+              with:
+                access_key: ${{ secrets.ACCESS_KEY }}
+                secret_access_key: ${{ secrets.SECRET_ACCESS_KEY }}
+                region: 'us-east-1'
+                source: '.'
+                destination_bucket: ${{ secrets.DESTINATION_BUCKET }}
+                destination_prefix: '${{ secrets.DESTINATION_PREFIX }}
+                exclude: '.git/*'
+                delete: true
+                quiet: false
