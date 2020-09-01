@@ -1,0 +1,36 @@
+name: 'AWS S3 Sync Github Action'
+author: 'Sai'
+description: 'Syncs directories and S3 prefixes using the aws s3 sync CLI command'
+inputs:
+    access_key:
+        description: 'Access key of a user with necessary S3 permissions'
+        required: true
+    secret_access_key:
+        description: 'Secret access key of a user with necessary S3 permissions'
+        required: true
+    region:
+        description: 'Region in which the bucket was created'
+        required: false
+        default: 'us-east-1'
+    source:
+        description: 'Source directory/prefix that you want to sync'
+        required: false
+    destination_bucket:
+        description: 'Destination S3 bucket where you want to sync the source'
+        required: true
+    destination_prefix:
+        description: 'S3 prefix in the destination bucket where you want to sync the source'
+        required: false
+    exclude:
+        description: '(string) Exclude all files or objects from the command that matches the specified pattern.'
+        required: false
+    delete:
+        description: '(boolean) Files that exist in the destination but not in the source are deleted during sync.'
+        required: false
+        default: true
+    quiet:
+        description: '(boolean) Does not display the operations performed from the specified command.'
+        required: false
+runs:
+    using: docker
+    image: Dockerfile
