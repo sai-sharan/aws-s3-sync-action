@@ -47,11 +47,11 @@ if exclude:
     args.append(f'--exclude "{exclude}"')
 
 # Check if 'delete' flag is used:
-if delete:
+if delete.lower() == "true":
     args.append("--delete")
 
 # Check if 'quiet' flag is used:
-if quiet:
+if quiet.lower() == "true":
     args.append("--quiet")
 
 
