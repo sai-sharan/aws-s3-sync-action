@@ -3,7 +3,6 @@
 `aws-s3-sync-action` is a GitHub action, which allows you to sync data from your GitHub repo or data created in your workflows to a S3 bucket that you have access to.
 
 ### How to use `aws-s3-sync-action` ?
----
 
 When configuring your workflow, you can reference this action in your workflow file to sync data from your GitHub repo or data created in your workflows to a S3 bucket that you have access to.
 
@@ -50,7 +49,6 @@ jobs:
 ```
 
 ## Usage:
----
 
 The `aws-s3-sync-action` takes the following parameters as inputs:
 
@@ -67,7 +65,6 @@ The `aws-s3-sync-action` takes the following parameters as inputs:
 |quiet|Does not display the operations performed from the specified command.|boolean|`false`|False|
 
 ## Suggestions:
----
 
 - `access_key`, `secret_access_key` are confidential/sensitive information and you would not want them to be public. Suggestion is to add these values as [encrypted secrets](https://docs.github.com/en/actions/configuring-and-managing-workflows/creating-and-storing-encrypted-secrets) and pass the secrets context to the inputs of `aws-s3-sync-action`
 
@@ -90,7 +87,7 @@ with:
 ```  
 
 ## License
----
+
 MIT License
 
 Copyright (c) 2020  Sai Poona
